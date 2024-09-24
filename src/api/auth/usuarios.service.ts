@@ -1,6 +1,6 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
-import { PrismaService } from 'src/services/prisma.service';
-import { LoginAccess, ResponseCreateUser, ResponseUpdateUser, ResponsLogin, Usuarios, UsuariosWithRole } from 'src/model/UsuariosDTO';
+import { PrismaService } from '../services/prisma.service';
+import { LoginAccess, ResponseCreateUser, ResponseUpdateUser, ResponsLogin, Usuarios, UsuariosWithRole } from '../model/UsuariosDTO';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 import { HttpException, HttpStatus } from '@nestjs/common';

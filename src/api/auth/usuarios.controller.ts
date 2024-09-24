@@ -1,12 +1,11 @@
 import { Body, Controller, Post, Get, Put, Headers, Delete, UseGuards, Param } from '@nestjs/common';
 import { UsuariosService } from './usuarios.service';
-import { LoginAccess, Usuarios, UsuariosWithRole } from 'src/model/UsuariosDTO';
+import { LoginAccess, Usuarios, UsuariosWithRole } from '../model/UsuariosDTO';
 import { UnauthorizedException } from '@nestjs/common';
-import { JwtAuthGuard } from 'src/JwtService';
+import { JwtAuthGuard } from 'src/api/utils/Security/JwtService';
 import { Query } from '@nestjs/common';
 import { Req } from '@nestjs/common';
-import { RolesGuard } from 'src/RolesGuard';
-import { RolesDecorator } from 'src/RolesDecorador';
+import { RolesGuard } from 'src/api/utils/Permission/Roles/RolesGuard';
 
 @Controller('auth')
 export class UsuariosController {
@@ -54,8 +53,6 @@ export class UsuariosController {
         const token = authHeader.split(' ')[1];
         return this.usuarioService.getSession(token);
     }
-
-
 
     @UseGuards(JwtAuthGuard, RolesGuard)
     @Post('/create')

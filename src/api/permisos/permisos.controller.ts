@@ -1,6 +1,6 @@
 import { Controller, Get, Req, UnauthorizedException, UseGuards } from '@nestjs/common';
 import { PermisosService } from './permisos.service';
-import { JwtAuthGuard } from 'src/JwtService';
+import { JwtAuthGuard } from 'src/api/utils/Security/JwtService';
 import { Request } from '@nestjs/common';
 
 @Controller('permisos')

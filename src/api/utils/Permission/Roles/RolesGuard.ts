@@ -1,6 +1,6 @@
 import { CanActivate, ExecutionContext, Injectable, UnauthorizedException } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import { Roles } from './model/RolesDTO'; 
+import { Roles } from '../../../model/RolesDTO'; 
 @Injectable()
 export class RolesGuard implements CanActivate {
   constructor(private readonly reflector: Reflector) {}
@@ -13,15 +13,14 @@ export class RolesGuard implements CanActivate {
 
     const request = context.switchToHttp().getRequest();
     const user = request["data"].data;
+    console.log(user)
 
     if (!user || !user.usuarios_roles) {
       throw new UnauthorizedException('NO TIENES PERMISO A ESTA ACCIÓN');
     }
 
     const response = requiredRoles.some(role =>
-      console.log(
         user.usuarios_roles.some(userRole => userRole.rol.nombre === role.nombre)
-      )
     );
 
     

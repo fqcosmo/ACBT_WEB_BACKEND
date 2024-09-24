@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { PermisosController } from './permisos.controller';
-import { PrismaService } from 'src/services/prisma.service';
+import { PrismaService } from '../services/prisma.service';
 import { PermisosService } from './permisos.service';
-import { JwtAuthGuard } from 'src/JwtService';
-import { EventosService } from 'src/eventos/eventos.service';
+import { JwtAuthGuard } from 'src/api/utils/Security/JwtService';
+import { EventosService } from 'src/api/eventos/eventos.service';
 
 @Module({
   imports: [

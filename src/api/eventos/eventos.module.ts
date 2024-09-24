@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { UsuariosModule } from '../auth/usuarios.module';
 import { PrismaService } from '../services/prisma.service';
 import { JwtModule } from '@nestjs/jwt';
-import { JwtAuthGuard } from '../JwtService';
+import { JwtAuthGuard } from '../utils/Security/JwtService';
 import { RolesService } from '../roles/roles.service';
 import { RolesModule } from '../roles/roles.module';
 import { PermisosService } from '../permisos/permisos.service';

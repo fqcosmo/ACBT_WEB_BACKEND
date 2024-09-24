@@ -1,9 +1,9 @@
 import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
 import { RolesService } from './roles.service';
-import { JwtAuthGuard } from 'src/JwtService';
+import { JwtAuthGuard } from 'src/api/utils/Security/JwtService';
 import { Put } from '@nestjs/common';
-import { UpdateRoles, UsuariosWithRole } from 'src/model/UsuariosDTO';
-import { RolesGuard } from 'src/RolesGuard';
+import { UpdateRoles, UsuariosWithRole } from '../model/UsuariosDTO';
+import { RolesGuard } from 'src/api/utils/Permission/Roles/RolesGuard';
 
 @Controller('roles')
 export class RolesController {

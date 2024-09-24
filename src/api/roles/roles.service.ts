@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from 'src/services/prisma.service';
-import { UpdateRoles } from 'src/model/UsuariosDTO';
+import { PrismaService } from '../services/prisma.service';
+import { UpdateRoles } from '../model/UsuariosDTO';
 import { HttpException } from '@nestjs/common';
 import { HttpStatus } from '@nestjs/common';
-import { ResponseUpdateUser } from 'src/model/UsuariosDTO';
+import { ResponseUpdateUser } from '../model/UsuariosDTO';
 
 
 @Injectable()
