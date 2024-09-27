@@ -17,9 +17,9 @@ import { PermisosController } from '../permisos/permisos.controller';
 
 @Module({
   imports: [
+    RolesModule,
     EventosModule,
     UsuariosModule,
-    RolesModule,
     JwtModule.register({
       secret: 'secretKey',
       signOptions: { expiresIn: '72h' }

@@ -4,6 +4,7 @@ import { RolesController } from './roles.controller';
 import { PrismaService } from '../services/prisma.service';
 import { RolesService } from './roles.service';
 import { JwtAuthGuard } from 'src/api/utils/Security/JwtService';
+import { RolesGuard } from '../utils/Permission/Roles/RolesGuard';
 
 @Module({
   imports: [
@@ -13,6 +14,6 @@ import { JwtAuthGuard } from 'src/api/utils/Security/JwtService';
     }),
   ],
   controllers: [RolesController],
-  providers: [PrismaService,RolesService,JwtAuthGuard],
+  providers: [PrismaService,RolesService,JwtAuthGuard,RolesGuard],
 })
 export class RolesModule {}
